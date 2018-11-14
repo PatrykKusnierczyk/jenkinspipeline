@@ -12,8 +12,9 @@ pipeline {
 
 stages{
         stage('Build'){
-		sh 'mvn --version'
-            
+            steps {
+                sh 'mvn clean package'
+            }
             post {
                 success {
                     echo 'Now Archiving...'
